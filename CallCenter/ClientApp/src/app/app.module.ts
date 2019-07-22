@@ -9,8 +9,6 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
-import { EmployeeFormComponent } from './employee-form/employee-form.component';
-import { EmployeeService } from '../../services/employee.service';
 
 @NgModule({
   declarations: [
@@ -18,8 +16,7 @@ import { EmployeeService } from '../../services/employee.service';
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    FetchDataComponent,
-    EmployeeFormComponent
+    FetchDataComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -28,13 +25,10 @@ import { EmployeeService } from '../../services/employee.service';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
-      { path: 'employees/new', component: EmployeeFormComponent },
       { path: 'fetch-data', component: FetchDataComponent },
     ])
   ],
-  providers: [
-    EmployeeService
-    ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
